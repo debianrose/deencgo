@@ -1,14 +1,11 @@
 .PHONY: all clean test c-lib
 
-all: deletgen c-lib deenc
-
-deletgen:
-        git submodule add https://github.com/debianrose/deletgen leetgen
+all: c-lib deenc
 
 c-lib:
-	$(MAKE) -C leetgen
+	$(MAKE) -C leetgen && cp ./leetgen/libleetgen.so .
 
-deenc: c-lib
+deenc: deletgen c-lib
 	go build -v -o libdeenc.a
 
 test: c-lib

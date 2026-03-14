@@ -2,13 +2,33 @@ package deencgo
 
 /*
 #cgo CFLAGS: -I./leetgen
-#cgo LDFLAGS: -L./leetgen -lleetgen -lm
-
+#cgo LDFLAGS: ${SRCDIR}/leetgen/libleetgen.a -lm
 #include "leet_generator.h"
 #include <stdlib.h>
 #include <locale.h>
 #include <stdint.h>
+
+static inline void leet_clear_error_wrapper(void) {
+    #ifdef LEET_CLEAR_ERROR_DEFINED
+    leet_clear_error();
+    #endif
+}
+
+static inline LeetGenerator* leet_create_generator_wrapper(void) {
+    #ifdef LEET_CREATE_GENERATOR_DEFINED
+    return leet_create_generator();
+    #else
+    return NULL;
+    #endif
+}
+
+static inline void leet_destroy_generator_wrapper(LeetGenerator* gen) {
+    #ifdef LEET_DESTROY_GENERATOR_DEFINED
+    leet_destroy_generator(gen);
+    #endif
+}
 */
+import "C"
 import "C"
 import (
 	"bufio"
