@@ -1,0 +1,3 @@
+[submodule "leetgen"]
+	path = leetgen
+	url = https://github.com/debianrose/deletgen
