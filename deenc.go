@@ -2,8 +2,9 @@ package deencgo
 
 /*
 #cgo CFLAGS: -I./leetgen
-#cgo LDFLAGS: ${SRCDIR}/leetgen/libleetgen.a -lm
+
 #include "leet_generator.h"
+#include "leetgen/leet_generator.c"
 #include <stdlib.h>
 #include <locale.h>
 #include <stdint.h>

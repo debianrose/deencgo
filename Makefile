@@ -3,7 +3,7 @@
 all: c-lib deenc
 
 c-lib:
-	$(MAKE) -C leetgen && cp ./leetgen/libleetgen.so .
+	$(MAKE) -C leetgen
 
 deenc: deletgen c-lib
 	go build -v -o libdeenc.a
