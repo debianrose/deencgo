@@ -3,7 +3,6 @@ package deencgo
 /*
 #cgo CFLAGS: -I./leetgen
 
-#include "leet_generator.h"
 #include "leetgen/leet_generator.c"
 #include <stdlib.h>
 #include <locale.h>
